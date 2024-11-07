@@ -1,7 +1,45 @@
+
+/* position sticky, color: #000? */
+/* Hero section / Navbar */
+.hero-image {
+  background-image: url(/src/assets/images/karolina-grabowska-H_eb_VfG2Ow-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 140vh;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 24px;
+  justify-content: center;
+  align-items: center;
+  /*color: #000;*/
+}
+
+.navbar li {
+  display: inline;
+  padding: 0 10px;
+  font: var(--font-navbar-items);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.navbar a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+
 /* Sections */
 section {
   min-height: var(--section-min-height);
-  padding: 215px 0 162px 0;
+  padding: 215px 0 162px 0; /*kannattaa mahollisesti laskee prosenteilla*/
   box-sizing: border-box;
 }
 
@@ -13,9 +51,11 @@ section.categories {
   background-color: var(--section2-color);
 }
 
-section.latesta-releases {
+section.latest-releases {
   background-color: var(--section3-color);
 }
+
+
 
 /* Containers */
 .container {
@@ -28,7 +68,7 @@ section.latesta-releases {
 /* Headings */
 h1, h2 {
   font: var(--font-heading);
-  text-transform: capitalize;
+  text-transform: uppercase;
   text-align: center;
   margin: 0;
 }
