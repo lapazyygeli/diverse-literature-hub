@@ -4,15 +4,16 @@
   --font-heading: 700 3.375rem 'Roboto Mono', sans-serif;
   --font-navbar-items: 700 0.9rem 'Roboto', sans-serif;
   --font-avatar: 700 1.625rem 'Roboto Mono', sans-serif;
-  --text-color-default: #000;
+  --font-search-bar: 700 1.25rem 'Roboto Mono', sans-serif;
+  --color-default: #000;
+  --color-section1: #fef6e1;
+  --color-section2: #f9f9f9;
+  --color-section3: #fdebeb;
+  --color-search-bar-button: #eaeaea;
   --container-max-width: 1151px;
   --section-min-height: 1194px;
-  --section1-color: #fef6e1;
-  --section2-color: #f9f9f9;
-  --section3-color: #fdebeb;
 
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--color-default);
   scroll-behavior: smooth;
 }
 
