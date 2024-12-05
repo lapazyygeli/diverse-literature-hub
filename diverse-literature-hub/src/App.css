@@ -1,4 +1,3 @@
-
 /* position sticky, color: #000? */
 /* Hero section / Navbar */
 .hero-image {
@@ -156,11 +155,38 @@ section.latest-releases {
   border-radius: 1px;
 }
 
+.title-author .card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 331px));
+  column-gap: 40px;
+  row-gap: 113px;
+  justify-content: center;
+  padding-top: 242px;
+}
+
+.title-author .card-container:has(:only-child:nth-child(n+3)) .card:nth-child(n+3) {
+  display: none;
+}
+
+.title-author .controls {
+  display: flex;
+  justify-content: center;
+  column-gap: 26px;
+  padding-top: 62px;
+}
+
+.title-author .controls button {
+  height: 39px;
+  width: 94px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.20);
+  border-radius: 8px;
+  padding: auto;
+}
+
 /* Section categories related things */
 
-
 /* Section latest-releases related things */
-
 
 /* Media */
 @media (min-width: 630px) {
@@ -171,5 +197,11 @@ section.latest-releases {
 
   .title-author .image-wrapper img {
     height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-author .card-container :nth-child(n+3) {
+    display: none
   }
 }
