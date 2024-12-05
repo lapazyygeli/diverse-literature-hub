@@ -6,7 +6,7 @@ const IntroductionWrapper = () => {
           <button>
             <img src="/src/assets/images/icons/search.png" alt="search icon" />
           </button>
-          <input type="text" />
+          <input type="text" placeholder="Book / Author name" />
         </div>
         <div className="avatar-wrapper">
           <div className="real-avatar-wrapper">
