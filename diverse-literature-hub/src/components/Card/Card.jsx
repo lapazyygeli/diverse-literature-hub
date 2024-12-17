@@ -1,32 +1,26 @@
-const json = [
-  {
-    bookTitle: "Something",
-    author: "name",
-    publicationYear: 1234,
-    contentDescription: "asdfasfsdf",
-    imageUrl: "https://covers.openlibrary.org/b/id/{id}-L.jpg",
-  },
-];
+import PropTypes from "prop-types";
+import styles from "./Card.module.css";
 
-const rightBit = {
-  bookTitle: "Something",
-  author: "name",
-  publicationYear: 1234,
-  contentDescription: "asdfasfsdf",
-  imageUrl: "https://covers.openlibrary.org/b/id/{id}-L.jpg",
-};
+export default function Card(props) {
+  const { title, author, publicationYear, coverImageUrl } = props;
 
-import "./Card.css";
-
-export default function Card() {
   return (
-    <div className="card">
-      <div className="card-image-container"></div>
-      <div className="card-info-container">
-        <p>{rightBit.bookTitle}</p>
-        <p>{rightBit.author}</p>
-        <p>{rightBit.publicationYear}</p>
+    <div className={styles.card}>
+      <div className={styles.cardImageContainer}>
+        {coverImageUrl && <img src={coverImageUrl} />}
+      </div>
+      <div>
+        <p className={styles.title}>{title}</p>
+        <p className={styles.author}>{author}</p>
+        <p className={styles.publicationYear}>{publicationYear}</p>
       </div>
     </div>
   );
 }
+
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  publicationYear: PropTypes.string.isRequired,
+  coverImageUrl: PropTypes.string,
+};

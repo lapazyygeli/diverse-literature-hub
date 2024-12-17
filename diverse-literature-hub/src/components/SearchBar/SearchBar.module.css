@@ -1,0 +1,14 @@
+.searchbar {
+  display: flex;
+  margin: 19px 0 80px 0;
+}
+
+.searchbar img {
+  padding: 20px 15px;
+}
+
+.searchbar input {
+  width: 100%;
+  padding-left: 36px;
+  font: var(--font-search-bar);
+}

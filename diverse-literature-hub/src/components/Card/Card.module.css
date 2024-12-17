@@ -1,0 +1,44 @@
+.card {
+  /*min-height: 450px;*/
+  box-sizing: border-box;
+  padding: 22px 17px;
+  background-color: #e4d3a4;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+.cardImageContainer {
+  height: 315px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
+  border-radius: 8px;
+}
+
+.card img {
+  object-fit: cover;
+  width: 60%;
+  height: 273px;
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.08);
+}
+
+.title {
+  margin-top: 16px;
+  font: var(--font-card-title);
+}
+
+.author {
+  font: var(--font-card-title);
+  opacity: 0.6;
+}
+
+.publicationYear {
+  font: var(--font-card-title);
+  opacity: 0.6;
+}
