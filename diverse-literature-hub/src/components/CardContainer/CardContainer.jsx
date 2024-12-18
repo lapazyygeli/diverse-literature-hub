@@ -5,78 +5,16 @@ import styles from "./CardContainer.module.css";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-// uuid pitäis laittaa sitten fetchaamisen jälkeen
-// vielä jokaselle objectille. Jos sen laittaa vasta
-// mäppäys vaiheessa, ni sillon hommat ei oo puree
-
-// joku homma pitää säättää, ettei kortteja näy enempää,
-// ku kymmene
 /*
 const jsonBooksByAuthor = [
   {
-    bookTitle: "Something",
+    title: "Something",
     author: "name",
-    publicationYear: 1234,
-    contentDescription: "asdfasfsdf",
-    imageUrl: "https://covers.openlibrary.org/b/id/9293464-L.jpg",
+    publicationYear: "1234",
+    description: "asdfasfsdf",
+    coverImageUrl: "https://covers.openlibrary.org/b/id/9293464-L.jpg",
   },
-  {
-    bookTitle: "Something",
-    author: "name",
-    publicationYear: 12345,
-    contentDescription: "asdfasfsdf",
-    imageUrl: "https://covers.openlibrary.org/b/id/7885268-L.jpg",
-  },
-  {
-    bookTitle: "Something",
-    author: "name",
-    publicationYear: 12346,
-    contentDescription: "asdfasfsdf",
-    imageUrl: "https://covers.openlibrary.org/b/id/11529684-L.jpg",
-  },
-  {
-    bookTitle: "Something",
-    author: "name",
-    publicationYear: 12347,
-    contentDescription: "asdfasfsdf",
-    imageUrl: "https://covers.openlibrary.org/b/id/{id}-L.jpg",
-  },
-  {
-    bookTitle: "Something",
-    author: "name",
-    publicationYear: 12348,
-    contentDescription: "asdfasfsdf",
-    imageUrl: "https://covers.openlibrary.org/b/id/{id}-L.jpg",
-  },
-  {
-    bookTitle: "Something",
-    author: "name",
-    publicationYear: 12349,
-    contentDescription: "asdfasfsdf",
-    imageUrl: "https://covers.openlibrary.org/b/id/{id}-L.jpg",
-  },
-  {
-    bookTitle: "Something",
-    author: "name",
-    publicationYear: 1234,
-    contentDescription: "asdfasfsdf",
-    imageUrl: "https://covers.openlibrary.org/b/id/{id}-L.jpg",
-  },
-  {
-    bookTitle: "Something",
-    author: "name",
-    publicationYear: 1234,
-    contentDescription: "asdfasfsdf",
-    imageUrl: "https://covers.openlibrary.org/b/id/{id}-L.jpg",
-  },
-  {
-    bookTitle: "Something",
-    author: "name",
-    publicationYear: 1234,
-    contentDescription: "asdfasfsdf",
-    imageUrl: "https://covers.openlibrary.org/b/id/{id}-L.jpg",
-  },
-];*/
+*/
 
 const getContainerSize = () => (window.innerWidth <= 768 ? 2 : 6);
 
@@ -111,7 +49,6 @@ const CardContainer = ({ jsonBooksByAuthor }) => {
           key={index} // Use index temporarily; better to assign unique keys during data fetch
           title={book.title}
           author={book.author}
-          publicationYear={book.publicationYear}
           coverImageUrl={book.coverImageUrl}
         />
       ) : (
@@ -124,8 +61,10 @@ const CardContainer = ({ jsonBooksByAuthor }) => {
 
   return (
     <>
-      <div className={styles.cardContainer}>{cards}</div>
-      <Controls page={page} onNext={onNext} onPrev={onPrev} />
+      <div id="card-container" className={styles.cardContainer}>
+        {cards}
+      </div>
+      <Controls onNext={onNext} onPrev={onPrev} />
     </>
   );
 };

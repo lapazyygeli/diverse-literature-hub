@@ -1,3 +1,4 @@
+import { useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import PropTypes from "prop-types";
 
@@ -56,16 +57,11 @@ const combineAuthorAndBookData = (bookData, author) =>
   }));
 
 const IntroductionWrapper = ({ onSearchSuccess }) => {
-  const onSearch = async (authorName) => {
-    console.log(`IntroWrapper: - authorName: ${authorName} `);
-    // should be represent some loading animation
-    // also uuidv4 to be added to list items
-    // OTetaan vain sellaset, joilla on coveri,  -- vuosi ei toimi
+  const [isLoading, setIsLoading] = useState(false);
 
-    // tsekkaa vuosiluvut
-    // errori tuli, ku kirjotettiin: kalakukko
-    // errori on tämä: Something went wrong: TypeError: Cannot read properties of undefined (reading 'filter')
+  const onSearch = async (authorName) => {
     try {
+      setIsLoading(true);
       const response1 = await fetch(AUTHOR_BY_NAME_URL(authorName));
       const json1 = await response1.json();
       const [authorKey, author] = getAuthorData(json1);
@@ -79,7 +75,7 @@ const IntroductionWrapper = ({ onSearchSuccess }) => {
     } catch (err) {
       alert(`Something went wrong: ${err}`);
     } finally {
-      console.log("asdf");
+      setIsLoading(false);
     }
   };
 
@@ -90,6 +86,7 @@ const IntroductionWrapper = ({ onSearchSuccess }) => {
           placeholder="Author name"
           alt="search icon"
           onClick={onSearch}
+          isLoading={isLoading}
         />
         <div className="avatar-wrapper">
           <div className="real-avatar-wrapper">
