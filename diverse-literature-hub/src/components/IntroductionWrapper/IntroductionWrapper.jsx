@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import PropTypes from "prop-types";
@@ -48,6 +49,7 @@ const getBookData = (json, onlyWithCover = false) => {
 };
 
 const combineAuthorAndBookData = (bookData, author) =>
+  // todo: books lack uuidv4
   bookData.map((book) => ({
     title: book.title,
     author,
@@ -59,21 +61,43 @@ const combineAuthorAndBookData = (bookData, author) =>
 const IntroductionWrapper = ({ onSearchSuccess }) => {
   const [isLoading, setIsLoading] = useState(false);
 
+  const fetchAuthorData = async (authorName) => {
+    const response = await fetch(AUTHOR_BY_NAME_URL(authorName));
+    const data = await response.json();
+    const [authorKey, author] = getAuthorData(data);
+
+    if (!authorKey) {
+      throw new Error("No author found with the given name. Give some valid input.");
+    }
+
+    return { authorKey, author };
+  };
+
+  const fetchBooksByAuthor = async (authorKey, author) => {
+    const response = await fetch(AUTHOR_BY_KEY_URL(authorKey));
+    const data = await response.json();
+    const books = getBookData(data, true);
+
+    if (books.length === 0) {
+      throw new Error("No books found for this author.");
+    }
+
+    return combineAuthorAndBookData(books, author);
+  };
+
   const onSearch = async (authorName) => {
+    if (!authorName.trim()) {
+      alert("Please enter an author name.");
+      return;
+    }
+
+    setIsLoading(true);
     try {
-      setIsLoading(true);
-      const response1 = await fetch(AUTHOR_BY_NAME_URL(authorName));
-      const json1 = await response1.json();
-      const [authorKey, author] = getAuthorData(json1);
-
-      const response2 = await fetch(AUTHOR_BY_KEY_URL(authorKey));
-      const json2 = await response2.json();
-      const books = getBookData(json2, true);
-
-      const parsedData = combineAuthorAndBookData(books, author);
+      const { authorKey, author } = await fetchAuthorData(authorName);
+      const parsedData = await fetchBooksByAuthor(authorKey, author);
       onSearchSuccess(parsedData);
     } catch (err) {
-      alert(`Something went wrong: ${err}`);
+      alert(err.message);
     } finally {
       setIsLoading(false);
     }

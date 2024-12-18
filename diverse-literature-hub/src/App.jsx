@@ -13,8 +13,8 @@ function App() {
       <Header />
       <main>
         <AuthorSection />
-        <CategoriesSection />
-        <LatestReleasesSection />
+        {/*<CategoriesSection />*/}
+        {/*<LatestReleasesSection />*/}
       </main>
       <Footer />
     </>

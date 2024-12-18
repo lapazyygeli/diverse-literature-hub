@@ -1,0 +1,27 @@
+.footer {
+  background-color: var(--color-footer);
+  min-height: var(--footer-min-height);
+  padding: 70px 0 23px 0;
+  box-sizing: border-box;
+}
+
+.domain {
+  font: var(--font-footer-domain);
+  color: var(--color-section2);
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+.socialMediaIcons {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  margin-bottom: 30px;
+}
+
+.copyRight {
+  margin: 0;
+  text-align: center;
+  font: var(--font-footer-copyright);
+  color: var(--color-section2);
+}

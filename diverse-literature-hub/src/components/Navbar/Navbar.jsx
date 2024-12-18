@@ -17,7 +17,7 @@ export default function Navbar() {
           <a href="#latest-releases">latest releases</a>
         </li>
         <li>
-          <a href="#">about</a>
+          <a href="#about">about</a>
         </li>
       </ul>
     </nav>

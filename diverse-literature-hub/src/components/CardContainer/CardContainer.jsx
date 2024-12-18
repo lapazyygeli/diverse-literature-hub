@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import Card from "../Card/Card.jsx";
 import Controls from "../Controls/Controls.jsx";
 import styles from "./CardContainer.module.css";
