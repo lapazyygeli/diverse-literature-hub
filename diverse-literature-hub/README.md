@@ -1,8 +1,42 @@
-# React + Vite
+# Diverse-literature-hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Diverse-literature-hub is a web application for exploring books by authors, browsing categories, and discovering the latest releases.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 How to Run the Program
+
+### Prerequisites
+
+- **Node.js** (LTS version recommended)
+- **npm** or **yarn** for managing dependencies
+
+### Installation Steps
+
+1. **Clone the Repository**
+   ```bash
+   git clone <repository-url>
+   cd diverse-literature-hub
+   npm install
+   npm run dev
+   ```
+
+---
+
+## 📖 About
+
+Diverse-literature-hub enables users to:
+
+- Search for authors and view their books.
+
+To be implemented:
+
+- Browse book categories.
+- Explore the latest book releases.
+- Interact with social media icons for quick access to various platforms.
+
+### Key Features:
+
+- **Responsive Design**: Optimized for devices of all sizes.
+- **Fast Rendering**: Built with Vite for rapid development and performance.
+- **Reusable Components**: Modular design with components
