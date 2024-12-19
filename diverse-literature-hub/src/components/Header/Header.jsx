@@ -5,6 +5,11 @@ export default function Header() {
     <header>
       <div className="hero-image">
         <Navbar />
+        <h1>
+          books that
+          <br />
+          inspire adventure
+        </h1>
       </div>
     </header>
   );

@@ -27,7 +27,7 @@ Diverse-literature-hub is a web application for exploring books by authors, brow
 
 Diverse-literature-hub enables users to:
 
-- Search for authors and view their books.
+- Search for authors and view their books. Set to show only books with covers.
 
 To be implemented:
 

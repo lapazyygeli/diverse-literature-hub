@@ -9,13 +9,29 @@
 }
 
 .placeholder {
-  background-color: #aed427;
-  height: 450px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(228, 211, 164);
+  /*background: linear-gradient(
+    0deg,
+    rgba(228, 211, 164, 1) 25%,
+    rgba(247, 233, 195, 0.8997724089635855) 58%
+  );*/
+  background: linear-gradient(0deg, rgba(228,211,164,0.6168592436974789) 25%, rgba(247,233,195,0.8521533613445378) 58%);
+}
+
+.placeholder img {
+  width: 60%;
+  height: 60%;
 }
 
 @media (max-width: 768px) {
-  .cardContainer div:nth-child(n+3) {
-    display: none
+  .cardContainer div:nth-child(n + 3) {
+    display: none;
   }
 
   .cardContainer {

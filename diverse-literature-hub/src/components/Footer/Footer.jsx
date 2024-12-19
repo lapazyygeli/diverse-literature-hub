@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className="container">
-        <p className={styles.domain}>Bookiebookie.com</p>
+        <p className={styles.domain}>diverseliteraturehub.com</p>
         <Navbar />
         <div className={styles.socialMediaIcons}>{socialMediaIcons}</div>
         <p className={styles.copyRight}>© Copyright. All rights reserved.</p>

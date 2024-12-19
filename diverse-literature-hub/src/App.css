@@ -1,29 +1,33 @@
 /* position sticky, color: #000? */
-/* Hero section / Navbar */
 .hero-image {
   background-image: url(/src/assets/images/karolina-grabowska-H_eb_VfG2Ow-unsplash.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 140vh;
+  height: 120vh;
 }
 
 /* Containers */
 .container {
   max-width: var(--container-max-width);
-  /*background-color: grey;*/
   margin: 0 auto;
 }
 
 /* Headings */
-h1, h2 {
+h1 {
+  margin: 25% 0 0 5%;
+  overflow: hidden;
+  font: var(--font-heading);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+h2 {
   font: var(--font-heading);
   text-transform: uppercase;
   text-align: center;
   margin: 0;
 }
-
-
 
 /* Sections */
 section {
@@ -128,4 +132,8 @@ section.latest-releases {
   }
 }
 
-
+@media (max-width: 630px) {
+  h1 {
+    font-size: 30px;
+  }
+}

@@ -54,7 +54,8 @@ const CardContainer = ({ jsonBooksByAuthor }) => {
         <div
           key={`placeholder-${index}`}
           className={`${styles.card} ${styles.placeholder}`}
-        />
+        >
+        </div>
       )
   );
 
