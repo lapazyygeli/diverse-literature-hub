@@ -1,5 +1,6 @@
 import IntroductionWrapper from "./../../components/IntroductionWrapper/IntroductionWrapper.jsx";
 import CardContainer from "../CardContainer/CardContainer.jsx";
+import styles from "./AuthorSection.module.css"
 import { useEffect, useState } from "react";
 
 export default function AuthorSection() {
@@ -22,7 +23,7 @@ export default function AuthorSection() {
   };
 
   return (
-    <section id="title-author" className="title-author">
+    <section id="title-author" className={styles.titleAuthor}>
       <div className="container">
         <h2>explore books by author</h2>
         <IntroductionWrapper onSearchSuccess={onSearchSuccess} />

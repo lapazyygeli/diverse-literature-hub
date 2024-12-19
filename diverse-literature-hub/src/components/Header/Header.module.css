@@ -1,0 +1,14 @@
+/* position sticky, color: #000? */
+.heroImage {
+  background-image: url(/src/assets/images/karolina-grabowska-H_eb_VfG2Ow-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 120vh;
+}
+
+@media (max-width: 630px) {
+  h1 {
+    font-size: 30px;
+  }
+}

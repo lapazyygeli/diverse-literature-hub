@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
+import styles from "./IntroductionWrapper.module.css"
 import { useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import PropTypes from "prop-types";
@@ -104,16 +105,16 @@ const IntroductionWrapper = ({ onSearchSuccess }) => {
   };
 
   return (
-    <div className="introduction-wrapper">
-      <div className="search-bar-avatar-wrapper">
+    <div className={styles.introductionWrapper}>
+      <div className={styles.searchBarAvatarWrapper}>
         <SearchBar
           placeholder="Author name"
           alt="search icon"
           onClick={onSearch}
           isLoading={isLoading}
         />
-        <div className="avatar-wrapper">
-          <div className="real-avatar-wrapper">
+        <div className={styles.avatarWrapper}>
+          <div className={styles.realAvatarWrapper}>
             <img
               src="/src/assets/images/michael-dam-mEZ3PoFGs_k-unsplash.jpg"
               alt="avatar image"
@@ -126,7 +127,7 @@ const IntroductionWrapper = ({ onSearchSuccess }) => {
           </p>
         </div>
       </div>
-      <div className="image-wrapper">
+      <div className={styles.imageWrapper}>
         <img src="/src/assets/images/ying-ge--Yo1cWJVKFY-unsplash.jpg" />
       </div>
     </div>
