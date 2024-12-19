@@ -4,18 +4,8 @@ import styles from "./CardContainer.module.css";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-/*
-const jsonBooksByAuthor = [
-  {
-    title: "Something",
-    author: "name",
-    publicationYear: "1234",
-    description: "asdfasfsdf",
-    coverImageUrl: "https://covers.openlibrary.org/b/id/9293464-L.jpg",
-  },
-*/
-
-const getContainerSize = () => (window.innerWidth <= 768 ? 2 : 6);
+// Import utility functions
+import { getContainerSize, getPlaceholderAmount } from "./utils.js";
 
 const CardContainer = ({ jsonBooksByAuthor }) => {
   const [page, setPage] = useState(0);
@@ -37,9 +27,7 @@ const CardContainer = ({ jsonBooksByAuthor }) => {
     pageStartingIndex,
     pageStartingIndex + containerSize
   );
-
-  const placeholderAmount =
-    books.length < containerSize ? containerSize - books.length : 0;
+  const placeholderAmount = getPlaceholderAmount(books, containerSize);
 
   const cards = [...books, ...Array(placeholderAmount).fill(null)].map(
     (book, index) =>
@@ -54,8 +42,7 @@ const CardContainer = ({ jsonBooksByAuthor }) => {
         <div
           key={`placeholder-${index}`}
           className={`${styles.card} ${styles.placeholder}`}
-        >
-        </div>
+        ></div>
       )
   );
 
